@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+  --font-sans: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+}
+
+/* Light Theme Variables */
+:root,
+[data-theme="light"] {
+  --color-primary: #0084FF;
+  --color-primary-content: #ffffff;
+  --color-secondary: #6366F1;
+  --color-secondary-content: #ffffff;
+  --color-accent: #0EA5E9;
+  --color-accent-content: #ffffff;
+  --color-neutral: #0F172A;
+  --color-neutral-content: #ffffff;
+  --color-base-100: #F0F4FC;
+  --color-base-200: #FFFFFF;
+  --color-base-300: #DDE4F0;
+  --color-base-content: #0F172A;
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+  --color-primary: #0084FF;
+  --color-primary-content: #ffffff;
+  --color-secondary: #6366F1;
+  --color-secondary-content: #ffffff;
+  --color-accent: #0EA5E9;
+  --color-accent-content: #ffffff;
+  --color-neutral: #F8FAFC;
+  --color-neutral-content: #0F172A;
+  --color-base-100: #0F172A;
+  --color-base-200: #1E293B;
+  --color-base-300: #334155;
+  --color-base-content: #F8FAFC;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism card utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] .glass-panel {
+  background: rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Animated gradient background mesh for premium screens */
+.gradient-bg {
+  background: linear-gradient(-45deg, #0084ff, #6366f1, #0ea5e9, #0f172a);
+  background-size: 400% 400%;
+  animation: gradientAnimation 12s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Smooth micro-animations */
+.hover-scale {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hover-scale:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom scrollbar styling for a modern premium feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 9999px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+}
